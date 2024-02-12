@@ -1,13 +1,14 @@
-const express = require('express');
 const Knex = require('knex');
 
-// Conexion
 const knex = Knex({
-  client: 'sqlite3',
+  client: 'pg',
   connection: {
-    filename: './data.db'
-  },
-  useNullAsDefault: true
+    host: 'localhost',
+    user: 'postgres',
+    password: '1999',
+    database: 'Sprint9',
+    port: 5432
+  }
 });
 
-const app = express();
+module.exports = knex;
